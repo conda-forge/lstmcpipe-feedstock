@@ -1,5 +1,5 @@
 {% set name = "lstmcpipe" %}
-{% set version = "0.10.3" %}
+{% set version = "0.10.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lstmcpipe-{{ version }}.tar.gz
-  sha256: 0ebedd5211a190487ba6b6702679d310703cd8aa724bad5d802299dab0aba397
+  sha256: 46c6c07165e2be9a03582a806d634d1b5e41877321ed69e524a71b3c229f2185
 
 build:
   entry_points:
@@ -29,11 +29,11 @@ build:
 
 requirements:
   host:
-    - python >=3.9
-    - setuptools-scm
+    - python
+    - setuptools-scm <8.0
     - pip
   run:
-    - python >=3.9
+    - python
     - lstchain >=0.9.0
     - numpy
     - astropy
@@ -42,8 +42,12 @@ requirements:
     - matplotlib-base
     - pytest
     - ruamel.yaml >=0.17
-    - setuptools-scm
+    - setuptools-scm <8.0
     - deepdiff
+    - ctapipe
+    - pytables
+    - tqdm
+    - pandas
 
 test:
   imports:
