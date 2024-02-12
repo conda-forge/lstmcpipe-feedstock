@@ -42,7 +42,7 @@ requirements:
     - matplotlib-base
     - pytest
     - ruamel.yaml >=0.17
-    - setuptools-scm<8.0
+    - setuptools-scm <8.0
     - deepdiff
 
 test:
