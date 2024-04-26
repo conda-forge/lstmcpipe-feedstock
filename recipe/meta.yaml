@@ -10,6 +10,9 @@ source:
   sha256: 46c6c07165e2be9a03582a806d634d1b5e41877321ed69e524a71b3c229f2185
 
 build:
+  noarch: python
+  number: 1
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - lstmcpipe = lstmcpipe.lstmcpipe_start:main
     - lstmcpipe_plot_models_importance = lstmcpipe.plots.plot_models_importance:main
@@ -24,16 +27,14 @@ build:
     - lstmcpipe_compare_irfs = lstmcpipe.scripts.script_compare_irfs:main
     - lstmcpipe_validate_config = lstmcpipe.scripts.script_lstmcpipe_validate_config:main
     - lstmcpipe_generate_config = lstmcpipe.scripts.lstmcpipe_generate_config:main
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
 
 requirements:
   host:
-    - python
+    - python >=3.9
     - setuptools-scm <8.0
     - pip
   run:
-    - python
+    - python >=3.9
     - lstchain >=0.9.0
     - numpy
     - astropy
