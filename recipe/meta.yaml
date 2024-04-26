@@ -30,11 +30,11 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.9
     - setuptools-scm <8.0
     - pip
   run:
-    - python
+    - python >=3.9
     - lstchain >=0.9.0
     - numpy
     - astropy
