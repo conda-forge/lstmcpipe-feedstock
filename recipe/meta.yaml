@@ -1,5 +1,5 @@
 {% set name = "lstmcpipe" %}
-{% set version = "0.10.4" %}
+{% set version = "0.10.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lstmcpipe-{{ version }}.tar.gz
-  sha256: 46c6c07165e2be9a03582a806d634d1b5e41877321ed69e524a71b3c229f2185
+  sha256: ef37825697b8e9a2650b7b2464eaf4eac79793a15f6c24821d0a90e31dab8cd4
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - lstmcpipe = lstmcpipe.lstmcpipe_start:main
