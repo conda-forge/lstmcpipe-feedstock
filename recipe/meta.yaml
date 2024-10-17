@@ -1,5 +1,5 @@
 {% set name = "lstmcpipe" %}
-{% set version = "0.11.1" %}
+{% set version = "0.11.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lstmcpipe-{{ version }}.tar.gz
-  sha256: 7158040e115275979ed733e2a94fc1d170a8ff7b640727ee0416d170ea695ab7
+  sha256: 36f3c82e42805297028a6322f9d02471485198aceceea217973efcdfc4b3f51f
 
 build:
   noarch: python
