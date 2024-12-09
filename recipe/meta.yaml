@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lstmcpipe-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lstmcpipe-{{ version }}.tar.gz
   sha256: 47c68b268c6ade8937902ea274a4acb67bdb8b4abc8585660241997da79f824a
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - lstmcpipe = lstmcpipe.lstmcpipe_start:main
@@ -31,14 +31,15 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python 3.9
+    - setuptools
     - setuptools-scm <8.0
     - pip
   run:
     - python >=3.9
     - lstchain >=0.9.0
     - numpy
-    - astropy
+    - astropy-base
     - ctaplot >=0.5
     - pyirf >=0.4
     - matplotlib-base
