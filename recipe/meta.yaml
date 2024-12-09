@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lstmcpipe-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lstmcpipe-{{ version }}.tar.gz
   sha256: 47c68b268c6ade8937902ea274a4acb67bdb8b4abc8585660241997da79f824a
 
 build:
@@ -31,7 +31,8 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python 3.9
+    - setuptools
     - setuptools-scm <8.0
     - pip
   run:
