@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - lstmcpipe = lstmcpipe.lstmcpipe_start:main
@@ -31,12 +31,12 @@ build:
 
 requirements:
   host:
-    - python 3.9
+    - python {{ python_min }}
     - setuptools
     - setuptools-scm <8.0
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - lstchain >=0.9.0
     - numpy
     - astropy-base
@@ -72,6 +72,7 @@ test:
     - lstmcpipe_generate_config --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/cta-observatory/lstmcpipe
